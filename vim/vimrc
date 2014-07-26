@@ -1,0 +1,249 @@
+" pathogen
+execute pathogen#infect()
+syntax on
+
+if has('autocmd')
+  filetype plugin indent on
+endif
+if has('syntax') && !exists('g:syntax_on')
+  syntax enable
+endif
+
+" screw vi
+set nocompatible
+
+" tabs
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+
+set encoding=utf-8
+
+set scrolloff=3
+
+" Store temporary files in a central spot
+" The double slash at the end ensures that the filename is created with the entire path so that name collision doesn't happen
+set backupdir=~/.vim-tmp/bckp//,/tmp//
+set directory=~/.vim-tmp/swap//,/tmp//
+
+set autoindent
+set showmode
+set showcmd
+set hidden
+set history=10000
+set wildmenu
+set wildmode=list:longest
+set visualbell
+set ttyfast
+set ruler
+set backspace=indent,eol,start
+set laststatus=2
+
+" relative line numbers. Bloody awesome!
+set relativenumber
+
+set undodir=~/.vim-tmp/undo//,/tmp//
+" undo-ing even after saving
+set undofile
+
+" tab completion
+set wildmenu
+set wildmode=list:longest,full
+let mapleader=","
+set ignorecase
+set smartcase
+" ---instead of :%s/foo/bar/g use :%s/foo/bar/---
+set gdefault	
+set incsearch
+set showmatch
+set hlsearch
+
+" 80th column is colored to show you are going too long
+set colorcolumn=80
+
+" make the current window big, but leave others small
+set winwidth=84
+" We have to have a winheight bigger than we want to set winminheight. But if we set winheight to be huge before winminheight, the winminheight set will fail.
+set winheight=5
+set winminheight=5
+set winheight=999
+
+" .bashrc loaded on vim startup. All aliases will now work within vim
+set shellcmdflag=-ic
+set shell=bash
+
+" colorscheme
+set background=dark
+if has('gui_running')
+  colorscheme molokai
+else
+  colorscheme molokai
+endif
+
+" This is for tmux, and terminal vim issues.
+if &term =~ '256color'
+  " disable Background Color Erase (BCE) so that color schemes
+  " render properly when inside 256-color tmux and GNU screen.
+  " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
+  set t_ut=
+endif
+
+" no arrow keys!
+nnoremap <Left> :echo "hey you true fart"<cr>
+nnoremap <Right> :echo "you miserable failure"<cr>
+nnoremap <Up> :echo "royal asshole"<cr>
+nnoremap <Down> :echo "hey fuckface"<cr>
+inoremap <Left> <ESC>:echo "dumbass"<cr>
+inoremap <Right> <ESC>:echo "royal asshole"<cr>
+inoremap <Up> <ESC>:echo "you are a true fart"<cr>
+inoremap <Down> <ESC>:echo "die you communist"<cr>
+
+" What if I pressed f1 instead of Esc?
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+" Escape to normal mode quicker
+inoremap jj <ESC>
+
+" Adding 6 more years to your life
+nnoremap ; :
+nnoremap : ;
+
+" mapping CAPS for moving around splits (instead of <C-w> ---
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" first 2 lines fixes Vim's screwed up regex search behaviour it seems
+nnoremap / /\v
+vnoremap / /\v
+
+" bubble selection
+" moving lines up and down by simply selecting the text and pressing control+arrow key
+" Bubble Single lines
+nmap <C-Up> [e
+nmap <C-Down> ]e
+" Bubble Multiple lines
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
+
+" Edit files in same directory as current file
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+nnoremap <leader>e :edit <C-R>=expand('%:h').'/'<cr>
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cnoremap w!! w !sudo tee > /dev/null %
+
+" place the next search in the middle of the screen
+nnoremap N Nzz
+nnoremap n nzz
+nnoremap <silent> * *zz
+nnoremap <silent> # #zz
+nnoremap <silent> g* g*zz
+nnoremap <silent> g# g#zz
+
+" clear the search buffer when hitting return
+nnoremap <cr> :noh<cr>
+" map control-backspace to delete the previous word
+imap <C-BS> <C-W>
+
+" running ruby programs within vim. run using ':make'
+set makeprg=ruby\ %
+" ,r -> 'run the program'
+nnoremap <leader>r :make<cr>
+
+" To save, ctrl-s
+nmap <C-s> ;w<CR><CR>
+" saving and then go to normal mode. This way it is easier to quit
+imap <C-s> <Esc>;w<CR><CR>
+
+" rename current file with ,R
+function! RenameFile()
+  let old_name = expand('%')
+  let new_name = input('New file name: ', expand('%'), 'file')
+  if new_name != '' && new_name != old_name
+    exec ':saveas ' . new_name
+    exec ':silent !rm ' . old_name
+    redraw!
+  endif
+endfunction
+nnoremap <leader>R :call RenameFile()<cr>
+
+" leader mappings
+if has('gui_running')
+    " ,M -> show menu bar in guimode
+    " ,m -> hide menu bar in guimode
+    nnoremap <leader>M :set go+=m<cr>
+    nnoremap <leader>m :set go-=m<cr>
+    " ,L -> light background
+    " ,D -> dark background
+    nnoremap <leader>L :set background=light<cr>
+    nnoremap <leader>D :set background=dark<cr>
+endif
+" ,a -> Ack Or SilverSearch or whatever
+let g:ackprg = 'ag --nogroup --nocolor --column'
+nnoremap <leader>a :Ag
+
+" CtrlP for fuzzy file search
+" ,f -> Search file in whole project
+nnoremap <leader>f :CtrlP<cr>
+" ,F -> Search only in the directory of the current file
+nnoremap <leader>F :CtrlPCurFile<cr>
+" ,b -> Search files that are already in the buffer
+nnoremap <leader>b :CtrlPBuffer<cr>
+let g:ctrlp_working_path_mode = 'ra'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+set wildignore+=*/out/**
+set wildignore+=*/vendor/**
+let g:ctrlp_custom_ignore = {
+ \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+ \ 'file': '\v\.(exe|so|dll)$',
+ \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+ \ }
+
+" ,v -> reselect the text that was just pasted so I can perform commands (like indentation) on it
+nnoremap <leader>v V`]
+
+" ,, -> Switch between last two files
+nnoremap <leader><leader> <c-^>
+
+" ,3 -> next buffer
+nnoremap <leader>3 :bn<CR>
+" ,4 -> previous buffer
+"  it's odd I know. But it's fast you know!
+nnoremap <leader>4 :bp<CR>
+" ,B -> delete all but the open buffer
+nnoremap <leader>B :BufOnly<cr>
+
+" ,E -> show directory listing
+nnoremap <leader>E :e.<cr>
+
+" ,x -> maximize current window
+nnoremap <leader>x <C-W>_<C-W><Bar>
+
+" ,W -> Blog mode. Allows for using vim as a plain text editor
+nnoremap <leader>W :set colorcolumn=0<cr>:set syntax=markdown<cr>:nnoremap j gj<cr>:nnoremap k gk<cr>
+
+" ,gl -> select all
+nnoremap <leader>gl ggVG
+" ,gc -> Copy selected text to windows clipboard
+vmap <leader>gc "+y
+" ,gp -> Pasted from windows clipboard
+nnoremap <leader>gp "+gP
+
+" ,T -> New Tab!
+nnoremap <leader>T :tabnew<cr>
+
+" ,S -> New Tab!
+nnoremap <leader>S :Scratch<cr>
+" ------------------------------------------------------------------------------
+" --- uncommented out elsewhere ---
+" --- ,c<space> -> toggle comment ---
+" --- ,r -> run the program using :make ---
+" --- ,R - rename the current file ---
+" --- ,e -> edit files in the same directory as current directory ---
+" --- ,b -> bring up the commant-T buffer window ---
