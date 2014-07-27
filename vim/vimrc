@@ -228,15 +228,15 @@ nnoremap <leader>x <C-W>_<C-W><Bar>
 " ,W -> Blog mode. Allows for using vim as a plain text editor
 nnoremap <leader>W :set colorcolumn=0<cr>:set syntax=markdown<cr>:nnoremap j gj<cr>:nnoremap k gk<cr>
 
-" ,gl -> select all
-nnoremap <leader>gl ggVG
-" ,gc -> Copy selected text to windows clipboard
-vmap <leader>gc "+y
-" ,gp -> Pasted from windows clipboard
-nnoremap <leader>gp "+gP
+" ,l -> select all
+nnoremap <leader>l ggVG
+" ,c -> Copy selected text to system clipboard
+vmap <leader>c "+y
+" ,p -> Pasted from system clipboard
+nnoremap <leader>p "+gP
 
-" ,T -> New Tab!
-nnoremap <leader>T :tabnew<cr>
+" ,t -> New Tab!
+nnoremap <leader>t :tabnew<cr>
 
 " ,S -> New Tab!
 nnoremap <leader>S :Scratch<cr>
