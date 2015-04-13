@@ -24,7 +24,7 @@ task :config_dir do
   if Dir.exist? config_dir
     puts "#{config_dir} already exists!"
   else
-    ln_s File.join("#{ENV['HOME']}/bin/dotfiles/dotvim/vim", 'vim'), config_dir
+    ln_s File.join("#{ENV['HOME']}/bin/dotfiles/dotvim", 'vim'), config_dir
     puts "vim symlinked to #{config_dir}"
   end
 end
