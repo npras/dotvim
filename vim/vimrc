@@ -242,9 +242,6 @@ nnoremap <leader>p "+gP
 
 " ,t -> New Tab!
 nnoremap <leader>t :tabnew<cr>
-
-" ,S -> New Tab!
-nnoremap <leader>S :Scratch<cr>
 " ------------------------------------------------------------------------------
 " --- uncommented out elsewhere ---
 " --- <leader>c<space> -> toggle comment ---
