@@ -150,11 +150,6 @@ nnoremap <cr> :noh<cr>
 " map control-backspace to delete the previous word
 imap <C-BS> <C-W>
 
-" running ruby programs within vim. run using ':make'
-set makeprg=ruby\ %
-" ,r -> 'run the program'
-nnoremap <leader>r :make<cr>
-
 " To save, ctrl-s
 "nmap <C-s> ;w<CR><CR>
 " saving and then go to normal mode. This way it is easier to quit
@@ -165,7 +160,7 @@ nnoremap <leader>r :make<cr>
 nmap <C-Space> ;w<CR><CR>
 imap <C-Space> <Esc>;w<CR><CR>
 
-" rename current file with ,R
+" rename current file with <leader>R
 function! RenameFile()
   let old_name = expand('%')
   let new_name = input('New file name: ', expand('%'), 'file')
@@ -177,27 +172,16 @@ function! RenameFile()
 endfunction
 nnoremap <leader>R :call RenameFile()<cr>
 
-" leader mappings
-if has('gui_running')
-    " ,M -> show menu bar in guimode
-    " ,m -> hide menu bar in guimode
-    nnoremap <leader>M :set go+=m<cr>
-    nnoremap <leader>m :set go-=m<cr>
-    " ,L -> light background
-    " ,D -> dark background
-    nnoremap <leader>L :set background=light<cr>
-    nnoremap <leader>D :set background=dark<cr>
-endif
-" ,a -> Ack Or SilverSearch or whatever
+" <leader>a -> Ack Or SilverSearch or whatever
 let g:ackprg = 'ag --nogroup --nocolor --column'
 nnoremap <leader>a :Ag
 
 " CtrlP for fuzzy file search
-" ,f -> Search file in whole project
+" <leader>f -> Search file in whole project
 nnoremap <leader>f :CtrlP<cr>
-" ,F -> Search only in the directory of the current file
+" <leader>F -> Search only in the directory of the current file
 nnoremap <leader>F :CtrlPCurFile<cr>
-" ,b -> Search files that are already in the buffer
+" <leader>b -> Search files that are already in the buffer
 nnoremap <leader>b :CtrlPBuffer<cr>
 let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
@@ -210,37 +194,34 @@ let g:ctrlp_custom_ignore = {
  \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
  \ }
 
-" ,v -> reselect the text that was just pasted so I can perform commands (like indentation) on it
+" <leader>v -> reselect the text that was just pasted so I can perform commands (like indentation) on it
 nnoremap <leader>v V`]
 
-" ,, -> Switch between last two files
+" <leader><leader> -> Switch between last two files
 nnoremap <leader><leader> <c-^>
 
-" ,3 -> next buffer
+" <leader>3 -> next buffer
 nnoremap <leader>3 :bn<CR>
-" ,4 -> previous buffer
+" <leader>4 -> previous buffer
 "  it's odd I know. But it's fast you know!
 nnoremap <leader>4 :bp<CR>
-" ,B -> delete all but the open buffer
+" <leader>B -> delete all but the open buffer
 nnoremap <leader>B :BufOnly<cr>
 
-" ,E -> show directory listing
+" <leader>E -> show directory listing
 nnoremap <leader>E :e.<cr>
 
-" ,x -> maximize current window
+" <leader>x -> maximize current window
 nnoremap <leader>x <C-W>_<C-W><Bar>
 
-" ,W -> Blog mode. Allows for using vim as a plain text editor
-nnoremap <leader>W :set colorcolumn=0<cr>:set syntax=markdown<cr>:nnoremap j gj<cr>:nnoremap k gk<cr>
-
-" ,l -> select all
+" <leader>l -> select all
 nnoremap <leader>l ggVG
-" ,c -> Copy selected text to system clipboard
+" <leader>c -> Copy selected text to system clipboard
 vmap <leader>c "+y
-" ,p -> Pasted from system clipboard
+" <leader>p -> Pasted from system clipboard
 nnoremap <leader>p "+gP
 
-" ,t -> New Tab!
+" <leader>t -> New Tab!
 nnoremap <leader>t :tabnew<cr>
 " ------------------------------------------------------------------------------
 " --- uncommented out elsewhere ---
