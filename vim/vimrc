@@ -50,7 +50,7 @@ set undofile
 " tab completion
 set wildmenu
 set wildmode=list:longest,full
-let mapleader="\<Space>"
+"let mapleader="\<Space>"
 set ignorecase
 set smartcase
 " ---instead of :%s/foo/bar/g use :%s/foo/bar/---
@@ -129,6 +129,10 @@ nmap <C-Down> ]e
 " Bubble Multiple lines
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
+
+" What's this?! https://www.reddit.com/r/vim/comments/1vdrxg/space_is_a_big_key_what_do_you_map_it_to/
+nmap <Space> \
+nmap <Space><Space> \\
 
 " Edit files in same directory as current file
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
