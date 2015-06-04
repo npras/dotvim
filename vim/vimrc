@@ -156,9 +156,14 @@ set makeprg=ruby\ %
 nnoremap <leader>r :make<cr>
 
 " To save, ctrl-s
-nmap <C-s> ;w<CR><CR>
+"nmap <C-s> ;w<CR><CR>
 " saving and then go to normal mode. This way it is easier to quit
-imap <C-s> <Esc>;w<CR><CR>
+"imap <C-s> <Esc>;w<CR><CR>
+"
+" Experimenting with new save method
+" Control+space to save
+nmap <C-Space> ;w<CR><CR>
+imap <C-Space> <Esc>;w<CR><CR>
 
 " rename current file with ,R
 function! RenameFile()
