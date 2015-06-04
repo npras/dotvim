@@ -230,7 +230,8 @@ nnoremap <leader>t :tabnew<cr>
 " ------------------------------------------------------------------------------
 " --- uncommented out elsewhere ---
 " --- <leader>c<space> -> toggle comment ---
-" --- <leader>r -> run the program using :make ---
+" --- <leader>q -> close the current buffer without closing the window
+"  (bclose.vim) ---
 " --- <leader>R - rename the current file ---
 " --- <leader>e -> edit files in the same directory as current directory ---
 " --- <leader>b -> bring up the commant-T buffer window ---
