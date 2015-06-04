@@ -50,7 +50,7 @@ set undofile
 " tab completion
 set wildmenu
 set wildmode=list:longest,full
-let mapleader=","
+let mapleader="\<Space>"
 set ignorecase
 set smartcase
 " ---instead of :%s/foo/bar/g use :%s/foo/bar/---
@@ -247,8 +247,8 @@ nnoremap <leader>t :tabnew<cr>
 nnoremap <leader>S :Scratch<cr>
 " ------------------------------------------------------------------------------
 " --- uncommented out elsewhere ---
-" --- ,c<space> -> toggle comment ---
-" --- ,r -> run the program using :make ---
-" --- ,R - rename the current file ---
-" --- ,e -> edit files in the same directory as current directory ---
-" --- ,b -> bring up the commant-T buffer window ---
+" --- <leader>c<space> -> toggle comment ---
+" --- <leader>r -> run the program using :make ---
+" --- <leader>R - rename the current file ---
+" --- <leader>e -> edit files in the same directory as current directory ---
+" --- <leader>b -> bring up the commant-T buffer window ---
