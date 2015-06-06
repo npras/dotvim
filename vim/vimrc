@@ -221,9 +221,9 @@ nnoremap <leader>x <C-W>_<C-W><Bar>
 " <leader>l -> select all
 nnoremap <leader>l ggVG
 " <leader>c -> Copy selected text to system clipboard
-vmap <leader>c "+y
+vmap ,c "+y
 " <leader>p -> Pasted from system clipboard
-nnoremap <leader>p "+gP
+nnoremap ,p "+gP
 
 " <leader>t -> New Tab!
 nnoremap <leader>t :tabnew<cr>
