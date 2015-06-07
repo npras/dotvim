@@ -50,7 +50,6 @@ set undofile
 " tab completion
 set wildmenu
 set wildmode=list:longest,full
-"let mapleader="\<Space>"
 set ignorecase
 set smartcase
 " ---instead of :%s/foo/bar/g use :%s/foo/bar/---
@@ -75,37 +74,7 @@ set shell=bash
 
 " colorscheme
 set background=dark
-if has('gui_running')
-  colorscheme molokai
-else
-  colorscheme molokai
-endif
-
-" This is for tmux, and terminal vim issues.
-if &term =~ '256color'
-  " disable Background Color Erase (BCE) so that color schemes
-  " render properly when inside 256-color tmux and GNU screen.
-  " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
-  set t_ut=
-endif
-
-" no arrow keys!
-nnoremap <Left> :echo "hey you true fart"<cr>
-nnoremap <Right> :echo "you miserable failure"<cr>
-nnoremap <Up> :echo "royal asshole"<cr>
-nnoremap <Down> :echo "hey fuckface"<cr>
-inoremap <Left> <ESC>:echo "dumbass"<cr>
-inoremap <Right> <ESC>:echo "royal asshole"<cr>
-inoremap <Up> <ESC>:echo "you are a true fart"<cr>
-inoremap <Down> <ESC>:echo "die you communist"<cr>
-
-" What if I pressed f1 instead of Esc?
-inoremap <F1> <ESC>
-nnoremap <F1> <ESC>
-vnoremap <F1> <ESC>
-
-" Escape to normal mode quicker
-inoremap jj <ESC>
+colorscheme molokai
 
 " Adding 6 more years to your life
 nnoremap ; :
@@ -154,13 +123,11 @@ nnoremap <cr> :noh<cr>
 " map control-backspace to delete the previous word
 imap <C-BS> <C-W>
 
-" To save, ctrl-s
+" To save, 'ctrl+s' and the new favorite 'ctrl+space'
 nmap <C-s> ;w<CR><CR>
 " saving and then go to normal mode. This way it is easier to quit
 imap <C-s> <Esc>;w<CR><CR>
 "
-" Experimenting with new save method
-" Control+space to save
 nmap <C-Space> ;w<CR><CR>
 imap <C-Space> <Esc>;w<CR><CR>
 
@@ -204,11 +171,6 @@ nnoremap <leader>v V`]
 " <leader><leader> -> Switch between last two files
 nnoremap <leader><leader> <c-^>
 
-" <leader>3 -> next buffer
-nnoremap <leader>3 :bn<CR>
-" <leader>4 -> previous buffer
-"  it's odd I know. But it's fast you know!
-nnoremap <leader>4 :bp<CR>
 " <leader>B -> delete all but the open buffer
 nnoremap <leader>B :BufOnly<cr>
 
