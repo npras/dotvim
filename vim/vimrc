@@ -213,7 +213,7 @@ nnoremap <leader>4 :bp<CR>
 nnoremap <leader>B :BufOnly<cr>
 
 " <leader>E -> show directory listing
-nnoremap <leader>E :e.<cr>
+nnoremap <leader>w :e.<cr>
 
 " <leader>x -> maximize current window
 nnoremap <leader>x <C-W>_<C-W><Bar>
