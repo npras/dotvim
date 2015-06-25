@@ -166,7 +166,12 @@ let g:ctrlp_custom_ignore = {
  \ }
 
 " <leader>v -> reselect the text that was just pasted so I can perform commands (like indentation) on it
-nnoremap <leader>v V`]
+nnoremap <leader>V `[v`]
+
+" <leader>v -> :vs. Creates vertical split of the current buffer
+nnoremap <leader>v :vs<cr>
+" <leader>h -> :sp. Creates horizontal split of the current buffer
+nnoremap <leader>h :sp<cr>
 
 " <leader><leader> -> Switch between last two files
 nnoremap <leader><leader> <c-^>
@@ -182,13 +187,16 @@ nnoremap <leader>x <C-W>_<C-W><Bar>
 
 " <leader>l -> select all
 nnoremap <leader>l ggVG
-" <leader>c -> Copy selected text to system clipboard
+" ,c -> Copy selected text to system clipboard
 vmap ,c "+y
-" <leader>p -> Pasted from system clipboard
+" ,p -> Pasted from system clipboard
 nnoremap ,p "+gP
 
 " <leader>t -> New Tab!
 nnoremap <leader>t :tabnew<cr>
+
+" <leader>d -> equivalent to :bd. Better than :q
+nnoremap <leader>d :bd<cr>
 " ------------------------------------------------------------------------------
 " --- uncommented out elsewhere ---
 " --- <leader>c<space> -> toggle comment ---
