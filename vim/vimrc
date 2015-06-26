@@ -176,9 +176,6 @@ nnoremap <leader>h :sp<cr>
 " <leader><leader> -> Switch between last two files
 nnoremap <leader><leader> <c-^>
 
-" <leader>B -> delete all but the open buffer
-nnoremap <leader>B :BufOnly<cr>
-
 " <leader>E -> show directory listing
 nnoremap <leader>w :e.<cr>
 
@@ -195,12 +192,15 @@ nnoremap ,p "+gP
 " <leader>t -> New Tab!
 nnoremap <leader>t :tabnew<cr>
 
+" <leader>B -> delete all but the open buffer
+nnoremap <leader>B :BufOnly<cr>
 " <leader>d -> equivalent to :bd. Better than :q
 nnoremap <leader>d :bd<cr>
+nnoremap <Leader>q :q<CR>
 " ------------------------------------------------------------------------------
 " --- uncommented out elsewhere ---
 " --- <leader>c<space> -> toggle comment ---
-" --- <leader>q -> close the current buffer without closing the window
+" --- <leader>y -> close the current buffer without closing the window
 "  (bclose.vim) ---
 " --- <leader>R - rename the current file ---
 " --- <leader>e -> edit files in the same directory as current directory ---

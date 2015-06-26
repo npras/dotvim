@@ -69,4 +69,4 @@ function! s:Bclose(bang, buffer)
   execute wcurrent.'wincmd w'
 endfunction
 command! -bang -complete=buffer -nargs=? Bclose call s:Bclose('<bang>', '<args>')
-nnoremap <silent> <Leader>q :Bclose<CR>
+nnoremap <silent> <Leader>y :Bclose<CR>
