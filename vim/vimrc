@@ -28,6 +28,7 @@ set backupdir=~/.vim-tmp/bckp//,/tmp//
 set directory=~/.vim-tmp/swap//,/tmp//
 
 set autoindent
+set autoread
 set showmode
 set showcmd
 set hidden
