@@ -12,7 +12,7 @@ task :rc_files do
     if File.exist?(dotfile) || File.symlink?(dotfile)
       warn "#{dotfile} already exists!"
     else
-      ln_s File.join("#{ENV['HOME']}/bin/dotfiles/dotvim/vim", script), dotfile
+      ln_s File.join("#{ENV['HOME']}/.dotfiles/dotvim/vim", script), dotfile
       puts "vim/#{script} symlinked to #{dotfile}"
     end
   end
@@ -24,7 +24,7 @@ task :config_dir do
   if Dir.exist? config_dir
     puts "#{config_dir} already exists!"
   else
-    ln_s File.join("#{ENV['HOME']}/bin/dotfiles/dotvim", 'vim'), config_dir
+    ln_s File.join("#{ENV['HOME']}/.dotfiles/dotvim", 'vim'), config_dir
     puts "vim symlinked to #{config_dir}"
   end
 end
