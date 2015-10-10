@@ -75,7 +75,7 @@ set shell=bash
 
 " colorscheme
 set background=dark
-colorscheme molokai
+colorscheme solarized
 
 " Adding 6 more years to your life
 nnoremap ; :
