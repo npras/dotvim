@@ -44,3 +44,5 @@ end
 
 desc "the setup"
 task :setup => [:rc_files, :config_dir, :tmp_dirs, :source]
+
+task default: :setup
