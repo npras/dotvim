@@ -81,7 +81,7 @@ colorscheme molokai
 nnoremap ; :
 nnoremap : ;
 
-" mapping CAPS for moving around splits (instead of <C-w> ---
+" mapping CAPS for moving around splits instead of <C-w> ---
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -177,7 +177,7 @@ nnoremap <leader>h :sp<cr>
 " <leader><leader> -> Switch between last two files
 nnoremap <leader><leader> <c-^>
 
-" <leader>E -> show directory listing
+" <leader>w -> show directory listing
 nnoremap <leader>w :e.<cr>
 
 " <leader>x -> maximize current window
@@ -194,13 +194,13 @@ nnoremap ,p "+gP
 nnoremap <leader>t :tabnew<cr>
 
 " <leader>B -> delete all but the open buffer
-nnoremap <leader>B :BufOnly<cr>
+nnoremap <leader>B :e.<cr>:BufOnly<cr>
 " <leader>d -> equivalent to :bd. Better than :q
 nnoremap <leader>d :bd<cr>
 nnoremap <Leader>q :q<CR>
 " ------------------------------------------------------------------------------
 " --- uncommented out elsewhere ---
-" --- <leader>c<space> -> toggle comment ---
+" --- <leader>c<space> -> toggle comment --- use '\' as leader
 " --- <leader>y -> close the current buffer without closing the window
 "  (bclose.vim) ---
 " --- <leader>R - rename the current file ---
