@@ -198,7 +198,6 @@ nnoremap <leader>B :e.<cr>:BufOnly<cr>
 " <leader>d -> equivalent to :bd. Better than :q
 nnoremap <leader>d :bd<cr>
 nnoremap <Leader>q :q<CR>
-" ------------------------------------------------------------------------------
 " --- uncommented out elsewhere ---
 " --- <leader>c<space> -> toggle comment --- use '\' as leader
 " --- <leader>y -> close the current buffer without closing the window
@@ -206,3 +205,20 @@ nnoremap <Leader>q :q<CR>
 " --- <leader>R - rename the current file ---
 " --- <leader>e -> edit files in the same directory as current directory ---
 " --- <leader>b -> bring up the commant-T buffer window ---
+
+
+" Search in visual mode - forwared (/) and backward(?)
+function! RangeSearch(direction)
+  call inputsave()
+  let g:srchstr = input(a:direction)
+  call inputrestore()
+  if strlen(g:srchstr) > 0
+    let g:srchstr = g:srchstr.
+          \ '\%>'.(line("'<")-1).'l'.
+          \ '\%<'.(line("'>")+1).'l'
+  else
+    let g:srchstr = ''
+  endif
+endfunction
+vnoremap <silent> / :<C-U>call RangeSearch('/')<CR>:if strlen(g:srchstr) > 0\|exec '/'.g:srchstr\|endif<CR>
+vnoremap <silent> ? :<C-U>call RangeSearch('?')<CR>:if strlen(g:srchstr) > 0\|exec '?'.g:srchstr\|endif<CR>
