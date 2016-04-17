@@ -222,3 +222,14 @@ function! RangeSearch(direction)
 endfunction
 vnoremap <silent> / :<C-U>call RangeSearch('/')<CR>:if strlen(g:srchstr) > 0\|exec '/'.g:srchstr\|endif<CR>
 vnoremap <silent> ? :<C-U>call RangeSearch('?')<CR>:if strlen(g:srchstr) > 0\|exec '?'.g:srchstr\|endif<CR>
+
+
+
+"" Custom Macros
+
+" Tenderlove's Debug syntax
+" ---<leader>D -> in normal mode puts these lines below cursor:
+" puts "#" * 90
+" puts caller
+" puts "#" * 90
+nnoremap <leader>D oputs "#" * 90<c-m>puts caller<c-m>puts "#" * 90<esc>
