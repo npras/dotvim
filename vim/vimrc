@@ -164,7 +164,7 @@ nnoremap <leader>x <C-W>_<C-W><Bar>
 " <leader>l -> select all
 nnoremap <leader>l ggVG
 " ,c -> Copy selected text to system clipboard
-vmap ,c "+y
+vnoremap ,c "+y
 " ,p -> Pasted from system clipboard
 nnoremap ,p "+gP
 
