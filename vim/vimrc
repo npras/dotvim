@@ -91,15 +91,6 @@ nnoremap <C-l> <C-w>l
 nnoremap / /\v
 vnoremap / /\v
 
-" bubble selection
-" moving lines up and down by simply selecting the text and pressing control+arrow key
-" Bubble Single lines
-nmap <C-Up> [e
-nmap <C-Down> ]e
-" Bubble Multiple lines
-vmap <C-Up> [egv
-vmap <C-Down> ]egv
-
 " What's this?! https://www.reddit.com/r/vim/comments/1vdrxg/space_is_a_big_key_what_do_you_map_it_to/
 nmap <Space> \
 nmap <Space><Space> \\
