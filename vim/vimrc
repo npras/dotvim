@@ -235,4 +235,4 @@ vnoremap <silent> ? :<C-U>call RangeSearch('?')<CR>:if strlen(g:srchstr) > 0\|ex
 " puts "#" * 90
 " puts caller
 " puts "#" * 90
-nnoremap <leader>D oputs "#" * 90<c-m>puts caller<c-m>puts "#" * 90<esc>
+nnoremap <leader>D o<c-m>puts "^^ #{?# * 90}"<c-m>puts caller.join("\n")<c-m>puts "$$ #{?# * 90}"<c-m><esc>
