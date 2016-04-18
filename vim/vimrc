@@ -112,8 +112,6 @@ nnoremap <silent> g# g#zz
 
 " clear the search buffer when hitting return
 nnoremap <cr> :noh<cr>
-" map control-backspace to delete the previous word
-imap <C-BS> <C-W>
 
 " To save, 'ctrl+s' and the new favorite 'ctrl+space'
 nmap <C-s> ;w<CR><CR>
