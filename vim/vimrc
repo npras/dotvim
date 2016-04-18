@@ -123,7 +123,8 @@ imap <C-Space> <Esc>;w<CR><CR>
 
 " <leader>a -> Ack Or SilverSearch or whatever
 let g:ackprg = 'ag --nogroup --nocolor --column'
-nnoremap <leader>a :Ag
+nnoremap <leader>a :Ag<space>
+nnoremap <leader>A :Ag<space>-s<space>
 
 " CtrlP for fuzzy file search
 " <leader>f -> Search file in whole project
