@@ -121,18 +121,6 @@ imap <C-s> <Esc>;w<CR><CR>
 nmap <C-Space> ;w<CR><CR>
 imap <C-Space> <Esc>;w<CR><CR>
 
-" rename current file with <leader>R
-function! RenameFile()
-  let old_name = expand('%')
-  let new_name = input('New file name: ', expand('%'), 'file')
-  if new_name != '' && new_name != old_name
-    exec ':saveas ' . new_name
-    exec ':silent !rm ' . old_name
-    redraw!
-  endif
-endfunction
-nnoremap <leader>R :call RenameFile()<cr>
-
 " <leader>a -> Ack Or SilverSearch or whatever
 let g:ackprg = 'ag --nogroup --nocolor --column'
 nnoremap <leader>a :Ag
