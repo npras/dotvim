@@ -197,7 +197,10 @@ nnoremap <leader>t :tabnew<cr>
 nnoremap <leader>B :e.<cr>:BufOnly<cr>
 " <leader>d -> equivalent to :bd. Better than :q
 nnoremap <leader>d :bd<cr>
-nnoremap <Leader>q :q<CR>
+nnoremap <leader>q :q<CR>
+" commenting
+nmap <leader>c \c<space>
+vmap <leader>c \c<space>
 " --- uncommented out elsewhere ---
 " --- <leader>c<space> -> toggle comment --- use '\' as leader
 " --- <leader>y -> close the current buffer without closing the window
