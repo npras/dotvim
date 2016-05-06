@@ -144,9 +144,6 @@ let g:ctrlp_custom_ignore = {
  \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
  \ }
 
-" <leader>v -> reselect the text that was just pasted so I can perform commands (like indentation) on it
-nnoremap <leader>V `[v`]
-
 " <leader>v -> :vs. Creates vertical split of the current buffer
 nnoremap <leader>v :vs<cr>
 " <leader>h -> :sp. Creates horizontal split of the current buffer
@@ -163,10 +160,21 @@ nnoremap <leader>x <C-W>_<C-W><Bar>
 
 " <leader>l -> select all
 nnoremap <leader>l ggVG
+
+" copy paste using yankstack plugin
+call yankstack#setup()
+nmap Y y$
+" After pasting using p or P, use these to cycle through yank history.
+" Also use :Yanks to see all the yanks
+nmap <leader>p <Plug>yankstack_substitute_older_paste
+nmap <leader>P <Plug>yankstack_substitute_newer_paste
 " ,c -> Copy selected text to system clipboard
 vnoremap ,c "+y
 " ,p -> Pasted from system clipboard
 nnoremap ,p "+gP
+" <leader>v -> reselect the text that was just pasted so I can perform commands (like indentation) on it
+nnoremap <leader>V `[v`]
+
 
 " <leader>t -> New Tab!
 nnoremap <leader>t :tabnew<cr>
