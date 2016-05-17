@@ -36,13 +36,7 @@ task :tmp_dirs do
   mkdir_p File.join(ENV['HOME'], '.vim-tmp', 'undo')
 end
 
-desc "Source .vimrc and .gvimrc"
-task :source do
-  `. ~/.vimrc`
-  `. ~/.gvimrc`
-end
-
 desc "the setup"
-task :setup => [:rc_files, :config_dir, :tmp_dirs, :source]
+task :setup => [:rc_files, :config_dir, :tmp_dirs]
 
 task default: :setup
