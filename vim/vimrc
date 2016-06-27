@@ -171,10 +171,14 @@ nmap Y y$
 " Also use :Yanks to see all the yanks
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
-" ,c -> Copy selected text to system clipboard
+"
+" ,c or Ctrl-c -> Copy selected text to system clipboard
 vnoremap ,c "+y
+vnoremap <C-c> "+y
 " ,p -> Pasted from system clipboard
 nnoremap ,p "+gP
+" or use <C-r><C-p>+ to paste from clipboard in INSERT mode
+
 " <leader>v -> reselect the text that was just pasted so I can perform commands (like indentation) on it
 nnoremap <leader>V `[v`]
 
