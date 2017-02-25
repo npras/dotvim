@@ -121,9 +121,6 @@ imap <C-s> <Esc>;w<CR><CR>
 nmap <C-Space> ;w<CR><CR>
 imap <C-Space> <Esc>;w<CR><CR>
 
-" https://github.com/justinmk/vim-sneak
-let g:sneak#s_next = 1
-
 " <leader>a -> Ack Or SilverSearch or whatever
 let g:ackprg = 'ag --nogroup --nocolor --column'
 nnoremap <leader>a :Ag<space>
