@@ -223,6 +223,6 @@ vnoremap <silent> ? :<C-U>call RangeSearch('?')<CR>:if strlen(g:srchstr) > 0\|ex
 " Tenderlove's Debug syntax
 " ---<leader>D -> in normal mode puts these lines below cursor:
 " puts "#" * 90 #DEBUG
-" puts caller #DEBUG
+" p caller #DEBUG
 " puts "#" * 90 #DEBUG
-nnoremap <leader>D oputs "^^ #{?# * 90}" #DEBUG<c-m>puts caller.join("\n") #DEBUG<c-m>puts "$$ #{?# * 90}" #DEBUG<esc>:w<CR>
+nnoremap <leader>D oputs "^^ #{?# * 90}" #DEBUG<c-m>p caller.join("\n") #DEBUG<c-m>puts "$$ #{?# * 90}" #DEBUG<esc>:w<CR>
