@@ -226,3 +226,6 @@ vnoremap <silent> ? :<C-U>call RangeSearch('?')<CR>:if strlen(g:srchstr) > 0\|ex
 " p caller #DEBUG
 " puts "#" * 90 #DEBUG
 nnoremap <leader>D oputs "^^ #{?# * 90}" #DEBUG<c-m>p caller.join("\n") #DEBUG<c-m>puts "$$ #{?# * 90}" #DEBUG<esc>:w<CR>
+
+" reactJs: vim-jsx syntax highlighting enabled on .js files as well
+let g:jsx_ext_required = 0
