@@ -229,3 +229,6 @@ nnoremap <leader>D oputs "^^ #{?# * 90}" #DEBUG<c-m>p caller.join("\n") #DEBUG<c
 
 " reactJs: vim-jsx syntax highlighting enabled on .js files as well
 let g:jsx_ext_required = 0
+
+" .md extensions are markdown files too
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
